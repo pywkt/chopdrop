@@ -1,0 +1,24 @@
+[workspace]
+members = ["chopdrop", "xtask"]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "ISC"
+authors = ["pywkt <bitstep@pywkt.com>"]
+
+[profile.release]
+lto = "thin"
+strip = "symbols"
+
+# baseview and egui-baseview are redirected to the copies under `vendor/`, where
+# the drag-and-drop patches live (`vendor/UPSTREAMING.md`): stock baseview
+# rejects Bitwig's `file:/…` XDND URIs and stock egui-baseview never forwards
+# drag events into egui. Vendored pristine first; each patched file documents its
+# changes at the top. The versions are pinned to what nice-plug-egui 0.6.0 asks
+# for (baseview ^0.4.1, egui-baseview ^0.9.0) — never bump without re-applying
+# and re-testing the patches.
+[patch.crates-io]
+baseview = { path = "vendor/baseview" }
+egui-baseview = { path = "vendor/egui-baseview" }

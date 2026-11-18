@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "sample_pad_switch": true,
+  "lanes": [
+    {
+      "name": "Kick",
+      "note": 36,
+      "colour": 14839406,
+      "volume_db": -3.0,
+      "pan": -0.25,
+      "choke": 1,
+      "mode": "one_shot",
+      "sample": {
+        "path": "/home/user/samples/kick.wav",
+        "file_name": "kick.wav",
+        "bytes_b64": "UklGRjAAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQwAAAAAAOgDGPz/fwCAAAA="
+      }
+    },
+    {
+      "name": "Open hat",
+      "note": 46,
+      "colour": 14850654,
+      "volume_db": 0.0,
+      "pan": 0.5,
+      "choke": 1,
+      "mode": "gate",
+      "sample": null
+    }
+  ]
+}
